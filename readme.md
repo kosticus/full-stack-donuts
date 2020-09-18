@@ -13,6 +13,21 @@ After working through this practice repo, you should be able to quickly build an
 
 Building a basic CRUD app should be mostly muscle memory.
 
+There are different branches that provide different entry points to this app:
+- No server, no database, no client
+- Server CRUD routes with database helpers, client GET
+
+Coming soon:
+- Server outline, no database, no client
+- No server, no database, client outline
+- No server, database outline, no client
+
+Coming sometime, maybe:
+- Server outline, no database, client outline
+- Server outline, database outline, no client
+- Server outline, database outline, client outline
+- No server, database outline, client outline
+
 ## Getting started
 
 **How to perform this activity:**
