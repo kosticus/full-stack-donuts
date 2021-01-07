@@ -6,6 +6,8 @@ var db = require('./queries');
 
 // app.use(json.parser());
 app.use(express.json());
+app.use(express.static('./client/dist'));
+
 /*
 STEP 1
 GET	/api/donuts	respond with string "all the donuts"
@@ -57,13 +59,13 @@ app.get('/api/donuts', (req, res) => {
 // });
 
 
-app.get('/api/donuts/sugar', (req, res) => {
-  const params = req.params;
-  const query = req.query;
-  console.log('sugar', params.donutId, query);
-  // res.status(500).send('Something went wrong');
-  res.send('single sugar');
-});
+// app.get('/api/donuts/sugar', (req, res) => {
+//   const params = req.params;
+//   const query = req.query;
+//   console.log('sugar', params.donutId, query);
+//   // res.status(500).send('Something went wrong');
+//   res.send('single sugar');
+// });
 
 app.get('/api/donuts/:donutId', (req, res) => {
   const params = req.params;
@@ -79,7 +81,7 @@ app.get('/api/donuts/:donutId', (req, res) => {
   //   res.send(d);
   // });
 
-  db.getOneDonut(params.donutId)
+  db.getOneDonutPromise(params.donutId)
     .then(d => {
       res.send(d);
     })

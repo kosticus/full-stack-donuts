@@ -45,7 +45,7 @@ function getOneDonutPromise(id) {
         return;
       }
   
-      resolve(results);
+      resolve(results[0]);
     });
   });
 }
